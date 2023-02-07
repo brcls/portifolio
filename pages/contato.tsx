@@ -12,8 +12,7 @@ const StyledLink = styled.a`
 
 const StyledBody = styled.div`
   background-color: #1f1f1f;
-  min-height: 100vmin;
-  max-height: 100%;
+  height: 100vh;
   padding: 100px 0 20px;
   position: relative;
   overflow: hidden;
@@ -93,6 +92,13 @@ const StyledIcon = styled.h1`
   color: #f3f3f3;
   text-align: center;
   margin: 0px 10px;
+  transition: 0.5s;
+
+  &:hover {
+    transition: 0.6s;
+    transform: scale(1.15);
+    color: #a0a0a0;
+  }
 `;
 
 const StyledRow = styled.div`

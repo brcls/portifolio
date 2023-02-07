@@ -15,13 +15,16 @@ const StyledBody = styled.div`
   position: relative;
   overflow: hidden;
   z-index: 1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  font-size: 1.25rem;
 `;
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 30px auto;
   max-width: 93%;
   height: 55px;
 `;
@@ -29,7 +32,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)`
 const StyledToggle = styled(ToggleButton)`
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   border-radius: 500px;
   padding: 0.8rem;
 `;
@@ -37,11 +40,11 @@ const StyledToggle = styled(ToggleButton)`
 const StyledTitle = styled.h1`
   color: #f3f3f3;
   text-align: center;
-  width: 80%;
-  margin: 0px auto 30px;
+  width: 95%;
+  margin: 0px auto;
   font-family: "Playfair Display", serif;
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 8.5vw;
 `;
 
 const StyledImage = styled(Image)`
@@ -52,25 +55,26 @@ const StyledImage = styled(Image)`
 `;
 
 const StyleCircle = styled.div`
-  width: 400px;
-  height: 400px;
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
   top: -150px;
   left: -150px;
-  background-color: #9e23b4;
+  background-color: #ff0048;
   animation: colorChange 3s infinite alternate;
   @keyframes colorChange {
     0% {
-      background-color: #8635d7;
+      background-color: #8000ff;
     }
     100% {
-      background-color: #b423a3;
+      background-color: #ff00e1;
     }
   }
   position: absolute;
-  filter: blur(170px);
+  filter: blur(250px);
   z-index: -1;
 `;
+
 const StyleCircle2 = styled.div`
   width: 400px;
   height: 400px;
@@ -90,7 +94,30 @@ const StyleCircle2 = styled.div`
   }
   position: absolute;
   overflow: hidden;
-  filter: blur(170px);
+  filter: blur(200px);
+  z-index: -1;
+`;
+
+const StyleCircle3 = styled.div`
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  top: 1600px;
+  left: -200px;
+  animation: colorChange2 3s infinite alternate;
+
+  background-color: #00ffee;
+  @keyframes colorChange2 {
+    0% {
+      background-color: #fd2d2d;
+    }
+    100% {
+      background-color: #1900ff;
+    }
+  }
+  position: absolute;
+  overflow: hidden;
+  filter: blur(350px);
   z-index: -1;
 `;
 
@@ -102,11 +129,9 @@ export default function Home() {
       <Header />
       <StyleCircle />
       <StyleCircle2 />
+      <StyleCircle3 />
       <StyledImage src={desenho} />
-      <StyledTitle>
-        Olá! Sou o Erick, Software Engineer e Web Developer
-      </StyledTitle>
-
+      <StyledTitle>Oi! Sou o Erick, Full Stack Software Engineer</StyledTitle>
       <StyledToggleButtonGroup type="radio" name="options" defaultValue={1}>
         <StyledToggle
           id="tbg-radio-1"

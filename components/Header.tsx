@@ -4,7 +4,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import Link from "next/link";
 
 const StyledHeader = styled(Navbar)`
-  background: rgba(5, 5, 5, 0.6);
+  background: rgba(5, 5, 5, 0.4);
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(2.5px);
@@ -25,7 +25,7 @@ const StyledHeader = styled(Navbar)`
 const StyledSubTitle = styled.h1`
   color: #f3f3f3;
   margin: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;
   transition: 0.5s;
