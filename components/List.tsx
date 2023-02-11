@@ -6,7 +6,7 @@ const StyledContainer = styled.ol`
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(2.5px);
-  width: 93%;
+  width: 90vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,34 @@ const StyledContainer = styled.ol`
     transform: scale(1.02);
     font-size: 1.5rem;
   }
+
+  @keyframes inAnimation {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes outAnimation {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 `;
+
+const mountedStyle = { animation: "inAnimation 500ms ease-in" };
+const unmountedStyle = {
+  animation: "outAnimation 500ms ease-out",
+  animationFillMode: "forwards",
+};
 
 const StyledTitle = styled.h1`
   font-family: "Playfair Display", serif;
@@ -32,13 +59,13 @@ const StyledTitle = styled.h1`
   font-size: 4.5rem;
 `;
 
-export default function List() {
+export default function List({ list }: any, show: any) {
   return (
-    <StyledContainer>
-      <StyledTitle>Filmes</StyledTitle>
-      <li>La Haine</li>
-      <li>Parasita</li>
-      <li>Goodfather</li>
+    <StyledContainer style={show ? mountedStyle : unmountedStyle}>
+      <StyledTitle>{list.titulo}</StyledTitle>
+      {list.itens.map((item: any) => (
+        <li>{item}</li>
+      ))}
     </StyledContainer>
   );
 }

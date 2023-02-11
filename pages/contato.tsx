@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import styled from "styled-components";
-import {} from "react-bootstrap";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import Image from "next/image";
@@ -122,17 +121,29 @@ export default function Contato() {
           Rua Episcopal, 2474. Apartamento 161B. São Carlos - SP
         </StyledText>
         <StyledRow>
-          <StyledLink href="https://github.com/brcls/">
+          <StyledLink
+            href="https://github.com/brcls/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <StyledIcon>
               <FaGithub />
             </StyledIcon>
           </StyledLink>
-          <StyledLink href="https://www.linkedin.com/in/brcls/">
+          <StyledLink
+            href="https://www.linkedin.com/in/brcls/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <StyledIcon>
               <FaLinkedin />
             </StyledIcon>
           </StyledLink>
-          <StyledLink href="mailto:brcls0502@gmail.com">
+          <StyledLink
+            href="mailto:brcls0502@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <StyledIcon>
               <MdOutlineAlternateEmail />
             </StyledIcon>

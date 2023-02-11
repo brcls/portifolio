@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import styled from "styled-components";
 import ProjectsList from "../components/ProjectsList";
@@ -6,19 +6,6 @@ import MyLists from "../components/MyLists";
 import { ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import Image from "next/image";
 import desenho from "../assets/desenho.svg";
-
-const StyledBody = styled.div`
-  background-color: #1f1f1f;
-  min-height: 100vmin;
-  max-height: 100%;
-  padding: 100px 0 20px;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
-  font-size: 1.25rem;
-`;
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)`
   display: flex;
@@ -49,9 +36,9 @@ const StyledTitle = styled.h1`
 
 const StyledImage = styled(Image)`
   display: block;
-  margin: 10px auto;
-  width: 250px;
-  height: 250px;
+  margin: 100px auto 10px;
+  width: 330px;
+  height: 330px;
 `;
 
 const StyleCircle = styled.div`
@@ -67,7 +54,7 @@ const StyleCircle = styled.div`
       background-color: #8000ff;
     }
     100% {
-      background-color: #ff00e1;
+      background-color: #00ff66;
     }
   }
   position: absolute;
@@ -124,13 +111,21 @@ const StyleCircle3 = styled.div`
 export default function Home() {
   const [show, setShow] = useState(1);
 
+  function MostrarListas(props: any) {
+    if (props.show) {
+      return <ProjectsList />;
+    } else {
+      return <MyLists />;
+    }
+  }
+
   return (
-    <StyledBody>
+    <div>
       <Header />
       <StyleCircle />
       <StyleCircle2 />
       <StyleCircle3 />
-      <StyledImage src={desenho} />
+      <StyledImage src={desenho} alt="desenho" />
       <StyledTitle>Oi! Sou o Erick, Full Stack Software Engineer</StyledTitle>
       <StyledToggleButtonGroup type="radio" name="options" defaultValue={1}>
         <StyledToggle
@@ -145,16 +140,17 @@ export default function Home() {
         </StyledToggle>
         <StyledToggle
           id="tbg-radio-2"
-          value={2}
+          value={0}
           variant="outline-light"
           onChange={() => {
-            setShow(2);
+            setShow(0);
           }}
         >
           Minhas listas
         </StyledToggle>
       </StyledToggleButtonGroup>
-      {show === 1 ? <ProjectsList /> : <MyLists />}
-    </StyledBody>
+
+      <MostrarListas show={show} />
+    </div>
   );
 }

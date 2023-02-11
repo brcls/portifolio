@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Card, Badge } from "react-bootstrap";
-import github from "../assets/github.png";
 import Image from "next/image";
+import api from "../services/api";
 
 const StyledCard = styled(Card)`
   background: rgba(5, 5, 5, 0.4);
@@ -11,7 +11,7 @@ const StyledCard = styled(Card)`
   -webkit-backdrop-filter: blur(2.5px);
   display: flex;
   flex-direction: row;
-  width: 93%;
+  width: 90vw;
   margin: 0 auto 30px;
   color: #f3f3f3;
   border: none;
@@ -66,28 +66,41 @@ const StyledBadgeGroup = styled.div`
   margin: 0.5rem 0;
 `;
 
-export default function ProjectsItem() {
+const StyledBadge = styled(Badge)`
+  margin: 0 0.2rem;
+`;
+
+const StyledLink = styled.a`
+  text-decoration: none;
+`;
+
+export default function ProjectItem({ project }: any) {
+  const loaderProp = ({ src }: any) => {
+    return src;
+  };
+
   return (
-    <StyledCard>
-      <StyledBody>
-        <StyledTitle>Projeto</StyledTitle>
-        <StyledBadgeGroup>
-          <Badge pill variant="primary">
-            React
-          </Badge>{" "}
-          <Badge pill variant="primary">
-            Next.js
-          </Badge>{" "}
-          <Badge pill variant="primary">
-            TypeScript
-          </Badge>{" "}
-        </StyledBadgeGroup>
-        <Card.Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          condimentum, nisl ut ultricies lacinia, nunc nisl ultricies nunc, nec
-        </Card.Text>
-      </StyledBody>
-      <StyledImage src={github} alt="github" />
-    </StyledCard>
+    <StyledLink href={project.link} target="_blank" rel="noreferrer">
+      <StyledCard>
+        <StyledBody>
+          <StyledTitle>{project.titulo}</StyledTitle>
+          <StyledBadgeGroup>
+            {project.stack.map((item: any) => (
+              <StyledBadge pill variant="primary">
+                {item}
+              </StyledBadge>
+            ))}
+          </StyledBadgeGroup>
+          <Card.Text>{project.descricao}</Card.Text>
+        </StyledBody>
+        <StyledImage
+          src={`http://localhost:3000/${project.src}`}
+          alt={project.titulo}
+          width={0}
+          height={0}
+          loader={loaderProp}
+        />
+      </StyledCard>
+    </StyledLink>
   );
 }
