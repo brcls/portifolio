@@ -126,7 +126,7 @@ export default function Home() {
       <StyleCircle2 />
       <StyleCircle3 />
       <StyledImage src={desenho} alt="desenho" />
-      <StyledTitle>Oi! Sou o Erick, Full Stack Software Engineer</StyledTitle>
+      <StyledTitle>Oi! Sou o Erick, Software Engineer</StyledTitle>
       <StyledToggleButtonGroup type="radio" name="options" defaultValue={1}>
         <StyledToggle
           id="tbg-radio-1"

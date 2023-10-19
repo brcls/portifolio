@@ -93,13 +93,13 @@ export default function ProjectItem({ project }: any) {
           </StyledBadgeGroup>
           <Card.Text>{project.descricao}</Card.Text>
         </StyledBody>
-        <StyledImage
+        {/* <StyledImage
           src={`http://localhost:3000/${project.src}`}
           alt={project.titulo}
           width={0}
           height={0}
           loader={loaderProp}
-        />
+        /> */}
       </StyledCard>
     </StyledLink>
   );

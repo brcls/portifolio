@@ -15,16 +15,16 @@ const StyledContainer = styled.div`
 export default function MyLists() {
   const [lists, setLists] = useState([]);
 
-  useEffect(() => {
-    api
-      .get("/listas")
-      .then(({ data }) => {
-        setLists(data);
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   api
+  //     .get("/listas")
+  //     .then(({ data }) => {
+  //       setLists(data);
+  //     })
+  //     .catch((error) => {
+  //       alert(error);
+  //     });
+  // }, []);
 
   return (
     <StyledContainer>

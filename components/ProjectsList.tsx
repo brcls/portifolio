@@ -41,17 +41,6 @@ const unmountedStyle = {
 export default function ProjectsList(show: any) {
   const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
-    api
-      .get("/projetos")
-      .then(({ data }) => {
-        setProjects(data);
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  }, [projects]);
-
   return (
     <StyledContainer style={show ? mountedStyle : unmountedStyle}>
       {projects.map((project) => (
