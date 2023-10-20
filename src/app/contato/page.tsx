@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
-import Header from "../../components/Header";
+import Header from "../../components/Header/Header";
 import styled from "styled-components";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdOutlineAlternateEmail } from "react-icons/md";
@@ -121,7 +123,7 @@ export default function Contato() {
           Rua Episcopal, 2474. Apartamento 161B. São Carlos - SP
         </StyledText>
         <StyledRow>
-          <StyledLink
+          {/* <StyledLink
             href="https://github.com/brcls/"
             target="_blank"
             rel="noreferrer"
@@ -147,7 +149,7 @@ export default function Contato() {
             <StyledIcon>
               <MdOutlineAlternateEmail />
             </StyledIcon>
-          </StyledLink>
+          </StyledLink> */}
         </StyledRow>
       </StyledContainer>
     </StyledBody>

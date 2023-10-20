@@ -1,0 +1,78 @@
+/* Home.module.css */
+.HomeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem 0;
+}
+
+.StyleCircle1 {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  top: -150px;
+  left: -150px;
+  animation: colorChange1 3s infinite alternate;
+  background-color: #ff0048;
+  position: absolute;
+  filter: blur(250px);
+  z-index: -1;
+}
+
+.StyleCircle2 {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  top: 600px;
+  right: -250px;
+  animation: colorChange2 3s infinite alternate;
+  background-color: #ffe600;
+  position: absolute;
+  overflow: hidden;
+  filter: blur(200px);
+  z-index: -1;
+}
+
+.StyleCircle3 {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  top: 1600px;
+  left: -200px;
+  animation: colorChange3 3s infinite alternate;
+  background-color: #00ffee;
+  position: absolute;
+  overflow: hidden;
+  filter: blur(350px);
+  z-index: -1;
+}
+
+.StyledTitle {
+  color: #f3f3f3;
+  text-align: center;
+  width: 95%;
+  margin: 0px auto;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 8.5vw;
+}
+
+.StyledToggleButtonGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  max-width: 93%;
+  height: 55px;
+}
+
+.StyledToggle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  font-size: 1.25rem;
+  border-radius: 500px;
+  padding: 0.8rem;
+}
+
+/* Define additional styles for your component if needed */

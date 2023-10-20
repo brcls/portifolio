@@ -1,0 +1,38 @@
+.Header {
+  background: rgba(5, 5, 5, 0.4);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  display: flex;
+  width: 45%;
+  height: 55px;
+  margin: 0 auto;
+  border-radius: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  top: 50px; /* Note: 'top' is repeated twice, you may need to fix it */
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.SubTitle {
+  color: #f3f3f3;
+  font-size: 1.25rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  transition: 0.5s;
+}
+
+.SubTitle:hover {
+  transition: 0.255s;
+  transform: scale(1.05);
+  color: #696969;
+}
+
+.Link {
+  text-decoration: none;
+}

@@ -1,0 +1,10 @@
+/* MyLists.module.css */
+.StyledContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Define additional styles for the MyLists component if needed */
