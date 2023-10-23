@@ -17,7 +17,7 @@ export default function Home() {
             quality={100}
           />
         </div>
-        <p className="w-2/3 text-6xl text-bold">
+        <p className="md:w-2/3 text-4xl md:text-6xl text-bold">
           Hello! I'am Erick Barcelos, Software Engineer
         </p>
       </div>

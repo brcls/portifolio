@@ -5,28 +5,32 @@ export default function Card() {
   return (
     <div
       className="group cursor-pointer mx-auto bg-zinc-700 backdrop-filter backdrop-blur-sm 
-      bg-opacity-25 h-96 rounded-xl hover:scale-105 duration-500 transform-gpu
-       justify-between flex overflow-hidden"
+      bg-opacity-25 md:h-96 h-[400px] rounded-xl hover:scale-105 duration-500 transform-gpu
+       justify-between flex md:flex-row flex-col overflow-hidden"
     >
-      <div className="p-10 text-left w-1/2">
-        <p className="text-bold text-2xl">Projeto exemplo</p>
+      <div className="md:p-10 p-5 text-left md:w-1/2 w-full">
+        <p className="text-bold md:text-2xl text-xl">Projeto exemplo</p>
         <div className="flex flex-wrap gap-2 my-6">
           {[0, 1, 2, 3, 4].map((item) => (
-            <div key={item} className="bg-blue-700 rounded-full px-4">
+            <div
+              key={item}
+              className="bg-blue-700 rounded-full px-4 text-sm md:text-md"
+            >
               Teste
             </div>
           ))}
         </div>
-        <p className="text-md">
+        <p className="md:text-md text-sm">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
           aliquid voluptatum provident. Consectetur vel nesciunt commodi
           deserunt accusantium nobis dicta aspernatur, voluptates illum impedit
           hic corporis, sequi fugit reiciendis corrupti.
         </p>
       </div>
-      <div className="w-1/2 flex justify-end items-end">
+      <div className="md:w-1/2 w-full flex md:justify-end md:items-end">
         <div
-          className="w-full h-60 top-10 left-4 relative group-hover:-translate-y-10 group-hover:-translate-x-4
+          className="w-full h-60 md:top-10 md:left-4 relative 
+          md:group-hover:-translate-y-10 group-hover:-translate-y-1/2 md:group-hover:-translate-x-4
         duration-500 rounded-xl overflow-hidden"
         >
           <Image
