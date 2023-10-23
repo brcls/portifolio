@@ -5,25 +5,34 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center align-middle text-center">
-      <Header />
-      <Image
-        className="mx-auto"
-        src="/me.png"
-        alt="me"
-        width={500}
-        height={500}
-        priority
-        quality={100}
-      />
-      <p className="text-6xl text-bold">
-        hello! i'am erick barcelos, software engineer
-      </p>
-      <div className="grid gap-10 my-10">
-        {[0, 1, 2, 3].map((item) => (
-          <Card />
-        ))}
+    <>
+      <div className="h-screen flex flex-col justify-center text-center items-center">
+        <div className="w-full h-2/5 relative">
+          <Image
+            src="/me.png"
+            alt="me"
+            fill
+            objectFit="contain"
+            priority
+            quality={100}
+          />
+        </div>
+        <p className="w-2/3 text-6xl text-bold">
+          Hello! I'am Erick Barcelos, Software Engineer
+        </p>
       </div>
-    </div>
+
+      <div
+        className="flex flex-col text-center border-t-2 border-zinc-700 py-10 
+      w-4/5 mx-auto"
+      >
+        <div className="text-2xl text-bold">Projects</div>
+        <div className="grid gap-10 my-10">
+          {[0, 1, 2, 3].map((item) => (
+            <Card key={item} />
+          ))}
+        </div>
+      </div>
+    </>
   );
 }
