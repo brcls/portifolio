@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-
-const inter = Inter({ subsets: ["latin"] });
+import Background from "@/components/Background/Background";
 
 export const metadata: Metadata = {
   title: "Erick Barcelos",
@@ -18,6 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="overflow-x-hidden">
         <Header />
+        <Background />
         {children}
       </body>
     </html>

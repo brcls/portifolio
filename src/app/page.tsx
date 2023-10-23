@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <div className="h-screen flex flex-col justify-center text-center items-center">
-        <div className="w-full h-2/5 relative">
+        <div className="w-full h-2/5 my-4 relative">
           <Image
             src="/me.png"
             alt="me"
