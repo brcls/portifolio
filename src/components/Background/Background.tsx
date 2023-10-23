@@ -10,6 +10,7 @@ export default function Background() {
         src={background}
         placeholder="blur"
         quality={100}
+        priority
         fill
         sizes="100vw"
         style={{
