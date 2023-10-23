@@ -37,7 +37,7 @@ export default function Card() {
             src="/paisagem.jpg"
             alt="teste"
             fill
-            objectFit="cover"
+            style={{ objectFit: "cover" }}
             priority
           />
         </div>

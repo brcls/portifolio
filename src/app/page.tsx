@@ -1,5 +1,4 @@
 import Card from "@/components/Card";
-import Header from "@/components/Header";
 import Image from "next/image";
 import React from "react";
 
@@ -12,7 +11,7 @@ export default function Home() {
             src="/me.png"
             alt="me"
             fill
-            objectFit="contain"
+            style={{ objectFit: "contain" }}
             priority
             quality={100}
           />
