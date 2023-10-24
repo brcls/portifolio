@@ -31,3 +31,10 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #b5b5b5;
 }
+
+@layer components {
+  .glass-dark {
+    background-color: rgba(107, 114, 128, 0.25);
+    backdrop-filter: blur(20px);
+  }
+}

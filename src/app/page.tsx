@@ -1,8 +1,47 @@
+"use client";
+
 import Card from "@/components/Card";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { projects } from "../../public/data/projects";
+import { techStack } from "../../public/data/techStack";
+
+type TechItem = {
+  name: string;
+  active: boolean;
+};
+
+function createTechItem(name: string): TechItem {
+  return { name, active: false };
+}
+
+const initialTechStack: TechItem[] = techStack.map(createTechItem);
 
 export default function Home() {
+  const [filter, setFilter] = useState<TechItem[]>(initialTechStack);
+
+  const filteredProjects = filter.some((item) => item.active)
+    ? projects.filter((project) =>
+        filter.some(
+          (key) =>
+            key.active &&
+            project.techStack.some(
+              (tech) => tech.toLowerCase() === key.name.toLowerCase()
+            )
+        )
+      )
+    : projects;
+
+  const projectCards = filteredProjects.map((project) => (
+    <Card key={project.slug} project={project} />
+  ));
+
+  const handleSelectFilter = (index: number) => {
+    const updatedFilter = [...filter]; // Criar uma cópia do array filter
+    updatedFilter[index].active = !updatedFilter[index].active; // Atualizar a propriedade active para true
+    setFilter(updatedFilter); // Atualizar o estado com o novo array
+  };
+
   return (
     <>
       <div className="h-screen flex flex-col justify-center text-center items-center">
@@ -26,11 +65,21 @@ export default function Home() {
       w-4/5 mx-auto"
       >
         <div className="text-2xl text-bold">Projects</div>
-        <div className="grid gap-10 my-10">
-          {[0, 1, 2, 3].map((item) => (
-            <Card key={item} />
+        <div className="flex flex-wrap justify-center gap-2 my-12">
+          {filter.map((item, index) => (
+            <button
+              key={index}
+              className={`glass-dark px-6 py-1 rounded-full hover:bg-zinc-900 
+            active:scale-95 font-bold hover:scale-110 duration-500 border border-zinc-600 ${
+              item.active && "bg-blue-500 hover:bg-blue-800"
+            }`}
+              onClick={() => handleSelectFilter(index)}
+            >
+              {item.name}
+            </button>
           ))}
         </div>
+        <div className="grid md:grid-cols-2 gap-10">{projectCards}</div>
       </div>
     </>
   );
