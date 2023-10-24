@@ -31,3 +31,19 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #b5b5b5;
 }
+
+@layer components {
+  .glass-dark {
+    background-color: #6b728040;
+    backdrop-filter: blur(20px);
+  }
+
+  .delay-hover {
+    transition: all 0.2s;
+    transition: 300ms;
+  }
+
+  .delay-hover:active {
+    transition: none;
+  }
+}

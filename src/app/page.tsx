@@ -26,10 +26,21 @@ export default function Home() {
         className="flex flex-col text-center border-t-2 border-zinc-700 py-10 
       w-4/5 mx-auto"
       >
-        <div className="text-2xl text-bold">Projects</div>
-        <div className="grid gap-10 my-10">
-          {[0, 1, 2, 3].map((item) => (
-            <Card key={item} />
+        <p className="text-2xl text-bold">Projects</p>
+        <div className="flex flex-wrap justify-center gap-2 my-12">
+          {filter.map((item, index) => (
+            <button
+              key={index}
+              className={`glass-dark px-6 py-1 rounded-full active:scale-95 font-bold
+               hover:scale-110 duration-500 border border-zinc-600 delay-hover ${
+                 item.active
+                   ? "bg-blue-500 hover:bg-blue-800 active:bg-blue-800"
+                   : "hover:bg-zinc-900 active:bg-zinc-900 "
+               }`}
+              onClick={() => handleSelectFilter(index)}
+            >
+              {item.name}
+            </button>
           ))}
         </div>
       </div>
