@@ -64,7 +64,7 @@ export default function Home() {
         className="flex flex-col text-center border-t-2 border-zinc-700 py-10 
       w-4/5 mx-auto"
       >
-        <div className="text-2xl text-bold">Projects</div>
+        <p className="text-2xl text-bold">Projects</p>
         <div className="flex flex-wrap justify-center gap-2 my-12">
           {filter.map((item, index) => (
             <button
