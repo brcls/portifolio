@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <>
       <div className="h-screen flex flex-col justify-center text-center items-center">
-        <div className="w-full h-2/5 my-4 relative">
+        <div className="w-full h-2/5 my-4 relative select-none">
           <Image
             src="/me.png"
             alt="me"
@@ -71,6 +71,7 @@ export default function Home() {
               key={index}
               className={`glass-dark px-6 py-1 rounded-full active:scale-95 
               font-bold hover:scale-110 duration-500 border border-zinc-600
+              select-none
               ${
                 item.active
                   ? "bg-blue-500 hover:bg-blue-800 active:bg-blue-800"
