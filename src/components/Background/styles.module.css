@@ -1,6 +1,5 @@
 .backgroundImage {
   position: fixed;
-  height: 100vh;
   min-height: -webkit-fill-available;
   width: 100vw;
   overflow: hidden;
