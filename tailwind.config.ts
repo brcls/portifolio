@@ -8,5 +8,8 @@ const config: Config = {
   ],
   plugins: [require("daisyui")],
   daisyui: { themes: [] },
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 };
 export default config;
