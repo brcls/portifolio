@@ -21,7 +21,7 @@ export default function Card({ project }: ICardProps) {
     <Link href={("project/" + slug) as Route}>
       <div
         className="group cursor-pointer glass-dark md:h-96 h-[300px] rounded-xl hover:scale-105 duration-500 transform-gpu
-      justify-between flex md:flex-row flex-col overflow-hidden"
+      justify-between flex md:flex-row flex-col overflow-hidden delay-hover active:scale-105"
       >
         <div className="md:p-10 p-5 text-left md:w-1/2 w-full">
           <p className="text-bold md:text-2xl text-xl">{name}</p>
@@ -41,7 +41,8 @@ export default function Card({ project }: ICardProps) {
           <div
             className="w-full h-80 md:top-10 md:left-4 relative 
           group-hover:-translate-y-10 md:group-hover:-translate-x-4
-          duration-500 rounded-xl overflow-hidden"
+          group-active:-translate-y-10 md:group-active:-translate-x-4
+          duration-500 rounded-xl overflow-hidden delay-hover"
           >
             <Image
               src="/paisagem.jpg"
