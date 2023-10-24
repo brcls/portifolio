@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="h-screen flex flex-col justify-center text-center items-center">
+      <div className="h-[100svh] flex flex-col justify-center text-center items-center">
         <div className="w-full h-2/5 my-4 relative select-none">
           <Image
             className="select-none"
