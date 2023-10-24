@@ -5,10 +5,13 @@
 body {
   color: #ffffff;
   background-color: #1f1f1f;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
-    "DejaVu Sans", Verdana, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+::selection {
+  background-color: rgb(212, 212, 216);
+  color: rgb(24, 24, 27);
 }
 
 /* width */
@@ -30,4 +33,11 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #b5b5b5;
+}
+
+@layer components {
+  .glass-dark {
+    background-color: rgba(107, 114, 128, 0.25);
+    backdrop-filter: blur(20px);
+  }
 }

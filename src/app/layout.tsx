@@ -2,10 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Background from "@/components/Background/Background";
+import { Roboto } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Erick Barcelos",
 };
+
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -14,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="overflow-x-hidden">
+      <body className={roboto.className}>
         <Header />
         <Background />
         {children}
