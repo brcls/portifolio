@@ -47,6 +47,7 @@ export default function Home() {
       <div className="h-screen flex flex-col justify-center text-center items-center">
         <div className="w-full h-2/5 my-4 relative select-none">
           <Image
+            className="select-none"
             src="/me.png"
             alt="me"
             fill
@@ -55,16 +56,16 @@ export default function Home() {
             quality={100}
           />
         </div>
-        <p className="md:w-2/3 text-4xl md:text-6xl text-bold">
-          Hello! I'am Erick Barcelos, Software Engineer
+        <p className="md:w-2/3 text-5xl w-4/5  md:text-6xl font-bold">
+          Olá! I'am Erick Barcelos
         </p>
       </div>
 
       <div
         className="flex flex-col text-center border-t-2 border-zinc-700 py-10 
-      w-4/5 mx-auto"
+      w-11/12 md:w-4/5 mx-auto"
       >
-        <p className="text-2xl text-bold">Projects</p>
+        <p className="text-5xl md:text-6xl font-bold">Projects</p>
         <div className="flex flex-wrap justify-center gap-2 my-12">
           {filter.map((item, index) => (
             <button

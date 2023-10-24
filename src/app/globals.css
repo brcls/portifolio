@@ -37,7 +37,7 @@ body {
 
 @layer components {
   .glass-dark {
-    background-color: #6b728040;
+    background-color: rgba(107, 114, 128, 0.13);
     backdrop-filter: blur(20px);
   }
 }

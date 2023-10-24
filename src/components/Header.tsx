@@ -11,8 +11,8 @@ export default function Header() {
       <Link href={"/"}>
         <button
           className="text-zinc-100 text-sm md:text-md py-2 px-6 
-        rounded-full font-bold hover:scale-110 duration-500 
-        hover:bg-zinc-900 active:scale-95"
+        rounded-full font-bold hover:scale-110 active:scale-95 duration-500 
+        hover:bg-zinc-900 active:bg-zinc-900"
         >
           Projects
         </button>
@@ -20,8 +20,8 @@ export default function Header() {
       <Link href={"/about-me"}>
         <button
           className="text-zinc-100 text-sm md:text-md py-2 px-6 
-        rounded-full font-bold hover:scale-110 duration-500 
-        hover:bg-zinc-900 active:scale-95"
+        rounded-full font-bold hover:scale-110 active:scale-95 duration-500 
+        hover:bg-zinc-900 active:bg-zinc-900"
         >
           About me
         </button>
@@ -29,8 +29,8 @@ export default function Header() {
       <Link href={"/contact"}>
         <button
           className="text-zinc-100 text-sm md:text-md py-2 px-6 
-        rounded-full font-bold hover:scale-110 duration-500 
-        hover:bg-zinc-900 active:scale-95"
+        rounded-full font-bold hover:scale-110 active:scale-95 duration-500 
+        hover:bg-zinc-900 active:bg-zinc-900"
         >
           Contact
         </button>

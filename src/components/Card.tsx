@@ -23,8 +23,8 @@ export default function Card({ project }: ICardProps) {
         className="group cursor-pointer glass-dark md:h-96 h-[300px] rounded-xl hover:scale-105 duration-500 transform-gpu
       justify-between flex md:flex-row flex-col overflow-hidden active:scale-105 select-none"
       >
-        <div className="md:p-10 p-5 text-left md:w-1/2 w-full">
-          <p className="text-bold md:text-2xl text-xl">{name}</p>
+        <div className="md:p-10 p-5 text-left md:w-1/2 w-full select-none">
+          <p className="text-5xl md:text-6xl font-bold">{name}</p>
           <div className="flex flex-wrap gap-2 my-6">
             {techStack.map((tech) => (
               <div
@@ -45,7 +45,8 @@ export default function Card({ project }: ICardProps) {
           duration-500 rounded-xl overflow-hidden"
           >
             <Image
-              src="/paisagem.jpg"
+              className="select-none"
+              src="/example.png"
               alt="teste"
               fill
               style={{ objectFit: "cover" }}
