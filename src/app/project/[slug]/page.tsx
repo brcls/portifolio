@@ -31,14 +31,13 @@ export default function Page({ params }: { params: { slug: string } }) {
         ))}
       </div>
       <p className="md:text-md text-sm">{project?.description}</p>
-      <Link href="https://github.com/brcls/erick-barcelos">
-        <button
-          className="glass-dark px-10 py-4 rounded hover:bg-zinc-900 active:bg-zinc-900
-        hover:scale-110 active:scale-95 duration-500 flex items-center gap-2"
-        >
-          <AiFillGithub size={30} />
-          GitHub
-        </button>
+      <Link
+        className="glass-dark px-10 py-4 rounded hover:bg-zinc-900 active:bg-zinc-900
+        hover:scale-105 active:scale-95 duration-500 flex items-center gap-2"
+        href="https://github.com/brcls/erick-barcelos"
+      >
+        <AiFillGithub size={30} />
+        Repository
       </Link>
     </div>
   );
