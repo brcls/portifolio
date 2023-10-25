@@ -10,7 +10,7 @@ import {
   AiFillCopy,
 } from "react-icons/ai";
 
-export default function Contacts() {
+export default function Contact() {
   const [showCopyMessage, setShowCopyMessage] = useState<boolean>();
 
   const copyValue = (val: string) => {
@@ -74,7 +74,7 @@ export default function Contacts() {
           <AiFillMail size={30} />
           E-mail
         </div>
-        {showCopyMessage && <p>Copied e-mail</p>}
+        {showCopyMessage && <p>Copied!</p>}
       </Link>
     </div>
   );
