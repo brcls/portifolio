@@ -2,25 +2,17 @@ import React from "react";
 
 export default function AboutMe() {
   return (
-    <div className="flex flex-col text-center gap-10 justify-center items-center py-20">
-      <p className="text-5xl md:text-6xl font-bold">Lists</p>
-      <div className="glass-dark w-1/2 rounded-xl p-4">
-        <p className="text-3xl md:text-4xl font-bold mb-5">Lists Teste</p>
-        <ol className="list-decimal list-inside">
-          <li className="text-3xl mt-2">Teste</li>
-          <li className="text-3xl mt-2">Teste</li>
-          <li className="text-3xl mt-2">Teste</li>
-          <li className="text-3xl mt-2">Teste</li>
-        </ol>
-      </div>
-      <div className="glass-dark w-1/2 rounded-xl p-4">
-        <p className="text-3xl md:text-4xl font-bold mb-5">Lists Teste</p>
-        <ol className="list-decimal list-inside">
-          <li className="text-3xl mt-2">Teste</li>
-          <li className="text-3xl mt-2">Teste</li>
-          <li className="text-3xl mt-2">Teste</li>
-          <li className="text-3xl mt-2">Teste</li>
-        </ol>
+    <div className="flex flex-col text-center gap-4 py-20 w-11/12 md:w-3/4 mx-auto">
+      <p className="text-5xl md:text-6xl font-bold mb-4">About me</p>
+      <div className="grid auto-rows-[320px] md:grid-cols-3 grid-cols-2 gap-4 w-full">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className={`row-span-1 rounded-xl p-4 glass-dark ${
+              i === 0 || i === 3 ? "col-span-2" : ""
+            } ${i === 2 ? "md:row-span-2" : ""}`}
+          ></div>
+        ))}
       </div>
     </div>
   );
