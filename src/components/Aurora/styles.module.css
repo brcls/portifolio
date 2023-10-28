@@ -1,0 +1,93 @@
+.animated {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1; /* Define uma camada abaixo do conteúdo principal */
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100svh;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper div {
+  position: absolute;
+  filter: blur(10vh); /* 50px scaled to vh */
+  opacity: 0.8;
+  -webkit-filter: blur(10vh); /* 50px scaled to vh */
+}
+
+.animated .one {
+  border-radius: 100%;
+  width: 150vh; /* 600px scaled to vh */
+  height: 150vh; /* 600px scaled to vh */
+  background-color: rgb(99, 102, 241);
+  left: -5vh; /* -50px scaled to vh */
+  top: -30vh; /* -300px scaled to vh */
+  z-index: 3;
+  animation: fly 12s linear infinite;
+  transform: rotate(0) translate(8vh) rotate(0); /* 80px scaled to vh */
+}
+
+.animated .two {
+  width: 125vh; /* 500px scaled to vh */
+  height: 200vh; /* 800px scaled to vh */
+  background-color: rgb(236, 72, 153);
+  bottom: -3vh; /* -30px scaled to vh */
+  left: -8vh; /* -80px scaled to vh */
+}
+
+.animated .three {
+  border-radius: 100%;
+  width: 112.5vh; /* 450px scaled to vh */
+  height: 112.5vh; /* 450px scaled to vh */
+  bottom: -8vh; /* -80px scaled to vh */
+  right: -10vh; /* -100px scaled to vh */
+  background-color: rgb(168, 85, 247);
+  animation: flyPlus 10s linear infinite;
+  -webkit-animation: flyPlus 10s linear infinite;
+  transform: rotate(0) translate(20vh) rotate(0); /* 200px scaled to vh */
+  -webkit-transform: rotate(0) translate(20vh) rotate(0); /* 200px scaled to vh */
+}
+
+.four {
+  border-radius: 100%;
+  width: 87.5vh; /* 350px scaled to vh */
+  height: 87.5vh; /* 350px scaled to vh */
+  margin: auto;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(59, 130, 246);
+  animation: flyPlus 15s linear infinite;
+  -webkit-animation: flyPlus 15s linear infinite;
+  transform: rotate(0) translate(20vh) rotate(0); /* 200px scaled to vh */
+  -webkit-transform: rotate(0) translate(20vh) rotate(0); /* 200px scaled to vh */
+}
+
+@keyframes fly {
+  0%,
+  100% {
+    transform: rotate(0) translate(8vw) rotate(0);
+  }
+  50% {
+    transform: rotate(1turn) translate(8vw) rotate(-1turn);
+  }
+}
+
+@keyframes flyPlus {
+  0%,
+  100% {
+    transform: rotate(0) translate(20vw) rotate(0);
+  }
+  50% {
+    transform: rotate(-1turn) translate(20vw) rotate(1turn);
+  }
+}

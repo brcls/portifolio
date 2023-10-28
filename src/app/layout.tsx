@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
-import Background from "@/components/Background/Background";
 import { Roboto } from "next/font/google";
+import Background from "@/components/Background/Background";
 
 export const metadata: Metadata = {
   title: "Erick Barcelos",

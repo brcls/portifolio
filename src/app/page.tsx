@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { projects } from "../../public/data/projects";
 import { techStack } from "../../public/data/techStack";
+import Aurora from "@/components/Aurora/Aurora";
 
 type TechItem = {
   name: string;
@@ -32,8 +33,8 @@ export default function Home() {
       )
     : projects;
 
-  const projectCards = filteredProjects.map((project) => (
-    <Card key={project.slug} project={project} />
+  const projectCards = filteredProjects.map((project, index) => (
+    <Card key={project.slug} project={project} index={index} />
   ));
 
   const handleSelectFilter = (index: number) => {
@@ -44,6 +45,7 @@ export default function Home() {
 
   return (
     <>
+      <Aurora />
       <div className="h-[100svh] flex flex-col justify-center text-center items-center">
         <div className="w-full h-2/5 my-4 relative select-none">
           <Image
@@ -56,16 +58,19 @@ export default function Home() {
             quality={100}
           />
         </div>
-        <p className="md:w-2/3 text-5xl w-4/5  md:text-6xl font-bold">
+        <p className="mx-2 text-8xl md:text-9xl font-bold">
           Olá! I'am Erick Barcelos
         </p>
       </div>
 
-      <div
-        className="flex flex-col text-center border-t-2 border-zinc-700 py-10 
-      w-11/12 md:w-3/4 mx-auto"
-      >
-        <p className="text-5xl md:text-6xl font-bold">Projects</p>
+      <div className="flex flex-col text-center py-20 w-11/12 mx-auto">
+        <p
+          className="text-8xl md:text-9xl font-bold bg-gradient-to-br
+         from-indigo-500 via-purple-500 to-pink-500 bg-clip-text pb-4 inline-block 
+         text-transparent"
+        >
+          Projects
+        </p>
         <div className="flex flex-wrap justify-center gap-2 my-12">
           {filter.map((item, index) => (
             <button
@@ -84,7 +89,7 @@ export default function Home() {
             </button>
           ))}
         </div>
-        <div className="grid md:grid-cols-2 gap-10">{projectCards}</div>
+        <div className="grid  md:grid-cols-2 gap-4 w-full">{projectCards}</div>
       </div>
     </>
   );

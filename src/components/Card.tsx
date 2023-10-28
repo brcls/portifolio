@@ -12,17 +12,20 @@ interface IProject {
 
 interface ICardProps {
   project: IProject;
+  index: number;
 }
 
-export default function Card({ project }: ICardProps) {
+export default function Card({ project, index }: ICardProps) {
   const { slug, name, description, techStack } = project;
 
   return (
     <Link href={("project/" + slug) as Route}>
       <div
-        className="group cursor-pointer glass-dark md:h-96 h-[300px] rounded-xl 
-        hover:scale-105 delay-75 duration-500 transform-gpu justify-between flex
-         md:flex-row flex-col overflow-hidden active:scale-105 select-none"
+        className={`group cursor-pointer glass-dark row-span-1 rounded-xl p-4 glass-dark ${
+          index === 0 || index === 3 ? "col-span-2" : ""
+        } ${index === 1 ? "md:row-span-2" : ""}
+        hover:scale-[1.02] delay-75 duration-500 transform-gpu justify-between flex
+         md:flex-row flex-col overflow-hidden active:scale-[1.02] select-none`}
       >
         <div className="md:p-10 p-5 text-left md:w-1/2 w-full select-none">
           <p className="text-5xl md:text-6xl font-bold">{name}</p>
