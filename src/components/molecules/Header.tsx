@@ -12,7 +12,7 @@ export default function Header() {
         <button
           className="text-zinc-100 text-md md:text-xl py-2 px-6 
         rounded-xl font-md hover:scale-110 active:scale-95 duration-500 
-        hover:bg-zinc-800 active:bg-zinc-900/hover:bg-zinc-800"
+        hover:bg-zinc-800 active:bg-zinc-900/hover:bg-zinc-800 mix-blend-multiply"
         >
           Projects
         </button>

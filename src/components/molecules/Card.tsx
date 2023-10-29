@@ -21,7 +21,7 @@ export default function Card({ project, index }: ICardProps) {
   return (
     <Link href={("project/" + slug) as Route}>
       <div
-        className={`group cursor-pointer glass-dark row-span-1 rounded-xl p-4 glass-dark ${
+        className={`group cursor-pointer glass-dark row-span-1 rounded-xl p-2 glass-dark ${
           index === 0 || index === 3 ? "col-span-2" : ""
         } ${index === 1 ? "md:row-span-2" : ""}
         hover:scale-[1.02] delay-75 duration-500 transform-gpu justify-between flex
@@ -31,15 +31,12 @@ export default function Card({ project, index }: ICardProps) {
           <p className="text-5xl md:text-6xl font-bold">{name}</p>
           <div className="flex flex-wrap gap-2 my-6">
             {techStack.map((tech) => (
-              <div
-                key={tech}
-                className="bg-blue-500 rounded-full px-4 text-sm md:text-md"
-              >
+              <div key={tech} className="bg-blue-500 rounded-full px-4 text-lg">
                 {tech}
               </div>
             ))}
           </div>
-          <p className="md:text-md text-sm">{description}</p>
+          <p className="text-lg">{description}</p>
         </div>
         <div className="md:w-1/2 w-full flex md:justify-end md:items-end">
           <div

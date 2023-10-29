@@ -7,6 +7,7 @@ import Link from "next/link";
 import { AiFillGithub } from "react-icons/ai";
 import example from "../../../../public/example.png";
 import me from "../../../../public/me.png";
+import Title from "@/components/atoms/Title";
 
 export default function Project({ params }: { params: { slug: string } }) {
   const project = projects.find((project) => project.slug === params.slug);
@@ -15,9 +16,9 @@ export default function Project({ params }: { params: { slug: string } }) {
     <>
       <div
         className="flex flex-col text-center gap-4 justify-center items-center 
-      py-20 w-11/12 md:w-3/4 mx-auto"
+      py-28 w-11/12 md:w-3/4 mx-auto"
       >
-        <p className="text-5xl md:text-6xl font-bold mb-4">{project?.name}</p>
+        <Title gradient>{project?.name}</Title>
 
         <div
           className="flex flex-wrap gap-4 md:gap-10 text-start p-4 
@@ -59,7 +60,7 @@ export default function Project({ params }: { params: { slug: string } }) {
           }}
         />
 
-        <p className="md:w-2/3 text-5xl md:text-6xl font-bold">Description</p>
+        <Title>Description</Title>
         <p className="md:text-md text-sm">{project?.description}</p>
 
         <Link

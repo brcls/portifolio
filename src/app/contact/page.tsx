@@ -1,5 +1,6 @@
 "use client";
 
+import Title from "@/components/atoms/Title";
 import Link from "next/link";
 import React, { useState } from "react";
 import {
@@ -35,13 +36,7 @@ export default function Contact() {
 
   return (
     <div className="flex w-11/12 mx-auto flex-col text-center gap-4 justify-center items-center py-28">
-      <p
-        className="text-8xl md:text-9xl font-bold bg-gradient-to-br
-         from-indigo-500 via-purple-500 to-pink-500 bg-clip-text pb-4 inline-block 
-         text-transparent mb-4"
-      >
-        Contact
-      </p>
+      <Title gradient>Contact</Title>
       <div className="flex gap-4 flex-wrap w-full justify-center items-center">
         <Link
           className="glass-dark select-none md:w-1/3 w-full p-5 rounded-xl text-xl hover:bg-zinc-900 active:bg-zinc-900
