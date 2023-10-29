@@ -40,5 +40,7 @@ body {
     background: rgba(115, 115, 115, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    border-color: rgba(121, 121, 121, 0.1);
+    border-width: 1px;
   }
 }

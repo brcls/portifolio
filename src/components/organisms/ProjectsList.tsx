@@ -49,8 +49,7 @@ export default function ProjectsList() {
           <button
             key={index}
             className={`glass-dark px-6 py-1 rounded-full active:scale-95 
-              font-bold hover:scale-110 duration-500 border border-zinc-600
-              select-none
+              font-bold hover:scale-110 duration-500 select-none
               ${
                 item.active
                   ? "bg-blue-500 hover:bg-blue-800 active:bg-blue-800"
