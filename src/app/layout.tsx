@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/molecules/Header";
 import { Roboto } from "next/font/google";
 import Background from "@/components/atoms/Background/Background";
+import Alert from "@/components/atoms/Alert";
 
 export const metadata: Metadata = {
   title: "Erick Barcelos",
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
+        <Alert />
         <Header />
         <Background />
         {children}

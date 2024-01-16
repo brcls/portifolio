@@ -3,13 +3,11 @@ import React from "react";
 import Aurora from "@/components/atoms/Aurora/Aurora";
 import Title from "@/components/atoms/Title";
 import ProjectsList from "@/components/organisms/ProjectsList";
-import Alert from "@/components/atoms/Alert";
 
 export default function Home() {
   return (
     <>
       <Aurora />
-      <Alert />
       <div className="h-[100svh] flex flex-col justify-center text-center items-center">
         <div className="w-full h-2/5 my-4 relative select-none">
           <Image
