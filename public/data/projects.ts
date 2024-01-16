@@ -1,4 +1,8 @@
-export const projects = [
+import { StaticImageData } from "next/image";
+import Loading from "../images/projects/tripper/IMG_4552.png";
+import { IProject } from "@/interface/IProject";
+
+export const projects: IProject[] = [
   {
     slug: "portifolio",
     description: `Crafted with Next.js and styled with Tailwind CSS, my personal portfolio serves as both a testing ground for
@@ -6,6 +10,9 @@ export const projects = [
                   through the interactive display of my skills and achievements.`,
     name: "Portifolio",
     techStack: ["React", "Next.js", "Tailwind", "Typescript"],
+    timeline: null,
+    gitLink: "https://github.com/brcls/erick-barcelos",
+    members: ["Erick Barcelos"],
   },
   {
     slug: "tripper",
@@ -14,5 +21,10 @@ export const projects = [
                   the added feature of voting on routes to elevate their visibility within the community.`,
     name: "Tripper",
     techStack: ["React Native", "Typescript"],
+    timeline: null,
+    gitLink: "https://github.com/brcls/tripper",
+    members: ["Erick Barcelos"],
+    projectVisualization: [{ images: [Loading] }],
+    coverImage: Loading,
   },
 ];

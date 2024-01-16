@@ -13,7 +13,8 @@ export default function Alert() {
       w-11/12 translate-x-1/2 flex justify-between text-start items-center rounded-xl gap-4"
         >
           <p>
-            This portfolio is not yet finalized, but one day it will be hehe
+            This portfolio is a work in progress, but rest assured, one day it
+            will be a polished masterpiece! 😉
           </p>
           <button
             className="btn btn-sm btn-primary"

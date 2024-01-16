@@ -5,8 +5,6 @@ import { projects } from "../../../../public/data/projects";
 import Image from "next/image";
 import Link from "next/link";
 import { AiFillGithub } from "react-icons/ai";
-import example from "../../../../public/example.png";
-import me from "../../../../public/me.png";
 import Title from "@/components/atoms/Title";
 
 export default function Project({ params }: { params: { slug: string } }) {
@@ -23,7 +21,7 @@ export default function Project({ params }: { params: { slug: string } }) {
           <Link
             className="glass-dark md:w-1/4 w-full px-10 py-4 rounded hover:bg-zinc-900 active:bg-zinc-900
           hover:scale-105 active:scale-95 duration-500 flex items-center justify-center gap-2"
-            href="https://github.com/brcls/erick-barcelos"
+            href={project?.gitLink}
           >
             <AiFillGithub size={30} />
             Repository
@@ -49,25 +47,23 @@ export default function Project({ params }: { params: { slug: string } }) {
               </div>
             </div>
 
-            <div className="flex items-center justify-between text-center glass-dark p-4 rounded-2xl w-full gap-2">
-              <p className="text-xl text-start">Timeline</p>
-              <p className="bg-blue-500 rounded-lg px-4 flex items-center text-md">
-                2020 - today
-              </p>
-            </div>
+            {project?.timeline ? (
+              <div className="flex items-center justify-between text-center glass-dark p-4 rounded-2xl w-full gap-2">
+                <p className="text-xl text-start">Timeline</p>
+                <p className="bg-blue-500 rounded-lg px-4 flex items-center text-md">
+                  {project?.timeline?.start} - {project?.timeline?.end}
+                </p>
+              </div>
+            ) : null}
 
             <div className="flex items-center justify-between text-center glass-dark p-4 rounded-2xl w-full gap-2">
               <p className="text-xl text-start">Members</p>
               <div className="flex flex-wrap gap-2 justify-end">
-                <p className="bg-blue-500 rounded-lg px-4 flex items-center text-md">
-                  Erick
-                </p>
-                <p className="bg-blue-500 rounded-lg px-4 flex items-center text-md">
-                  Erick
-                </p>
-                <p className="bg-blue-500 rounded-lg px-4 flex items-center text-md">
-                  Erick
-                </p>
+                {project?.members.map((member) => (
+                  <p className="bg-blue-500 rounded-lg px-4 flex items-center text-md">
+                    {member}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
@@ -77,18 +73,25 @@ export default function Project({ params }: { params: { slug: string } }) {
           </p>
         </div>
 
-        {[...Array(5)].map((_, i) => (
-          <Image
-            key={i}
-            alt="Example"
-            src={example}
-            sizes="100vw"
-            style={{
-              width: "100%",
-              height: "auto",
-              borderRadius: "10px",
-            }}
-          />
+        {project?.projectVisualization?.map((object, index) => (
+          <>
+            <p>{object.title}</p>
+            <p>{object.description}</p>
+
+            {object.images?.map((image) => (
+              <Image
+                key={index}
+                alt="Example"
+                src={image ?? ""}
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px",
+                }}
+              />
+            ))}
+          </>
         ))}
       </div>
     </>
