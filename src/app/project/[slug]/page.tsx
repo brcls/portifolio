@@ -7,6 +7,7 @@ import Link from "next/link";
 import { AiFillGithub } from "react-icons/ai";
 import Title from "@/components/atoms/Title";
 import { UrlObject } from "url";
+import { Route } from "next";
 
 export default function Project({ params }: { params: { slug: string } }) {
   const project = projects.find((project) => project.slug === params.slug);
@@ -20,7 +21,7 @@ export default function Project({ params }: { params: { slug: string } }) {
             <Link
               className="glass-dark md:w-1/4 w-full px-10 py-4 rounded hover:bg-zinc-900 active:bg-zinc-900
             hover:scale-105 active:scale-95 duration-500 flex items-center justify-center gap-2"
-              href={project?.gitLink as UrlObject}
+              href={project?.gitLink as Route}
             >
               <AiFillGithub size={30} />
               Repository

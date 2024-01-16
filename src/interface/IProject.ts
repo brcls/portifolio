@@ -7,7 +7,7 @@ export interface IProject {
   name: string;
   techStack: string[];
   timeline: { start: string; end: string } | null | undefined;
-  gitLink: unknown;
+  gitLink: string;
   members: string[];
   projectVisualization?: IVisualization[];
   coverImage?: StaticImageData;
