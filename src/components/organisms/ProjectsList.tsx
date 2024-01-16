@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Title from "../atoms/Title";
 import Card from "@/components/molecules/Card";
-import { projects } from "../../../public/data/projects";
+import { projects } from "../../../public/data/projects/projects";
 import { techStack } from "../../../public/data/techStack";
 
 type TechItem = {

@@ -12,7 +12,7 @@ export default function Home() {
         <div className="w-full h-2/5 my-4 relative select-none">
           <Image
             className="select-none"
-            src="/me.png"
+            src="/images/assets/me.png"
             alt="me"
             fill
             style={{ objectFit: "contain" }}

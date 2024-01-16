@@ -1,6 +1,7 @@
-import { StaticImageData } from "next/image";
-import Loading from "../images/projects/tripper/IMG_4552.png";
+import TripperCapa from "../../images/projects/tripper/splashScreen.png";
+import PortifolioCapa from "../../images/projects/portifolio/capa.png";
 import { IProject } from "@/interface/IProject";
+import { tripperVisualization } from "./tripperVisualization";
 
 export const projects: IProject[] = [
   {
@@ -13,6 +14,7 @@ export const projects: IProject[] = [
     timeline: null,
     gitLink: "https://github.com/brcls/erick-barcelos",
     members: ["Erick Barcelos"],
+    coverImage: PortifolioCapa,
   },
   {
     slug: "tripper",
@@ -24,7 +26,7 @@ export const projects: IProject[] = [
     timeline: null,
     gitLink: "https://github.com/brcls/tripper",
     members: ["Erick Barcelos"],
-    projectVisualization: [{ images: [Loading] }],
-    coverImage: Loading,
+    projectVisualization: tripperVisualization,
+    coverImage: TripperCapa,
   },
 ];

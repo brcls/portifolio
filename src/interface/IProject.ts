@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import { IVisualization } from "./IVisualization";
 
 export interface IProject {
   slug: string;
@@ -8,10 +9,6 @@ export interface IProject {
   timeline: { start: string; end: string } | null | undefined;
   gitLink: unknown;
   members: string[];
-  projectVisualization?: {
-    title?: string;
-    description?: string;
-    images?: StaticImageData[];
-  }[];
+  projectVisualization?: IVisualization[];
   coverImage?: StaticImageData;
 }
