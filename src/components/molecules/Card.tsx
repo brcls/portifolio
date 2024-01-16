@@ -36,7 +36,6 @@ export default function Card({ project, index }: ICardProps) {
               </div>
             ))}
           </div>
-          <p className="text-lg">{description}</p>
         </div>
         <div className="md:w-1/2 w-full flex md:justify-end md:items-end">
           <div

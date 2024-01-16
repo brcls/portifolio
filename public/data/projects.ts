@@ -1,26 +1,18 @@
 export const projects = [
   {
-    slug: "project-1",
-    description: "Development of a mobile app for task management",
-    name: "TaskMaster",
-    techStack: ["React Native", "Node.js", "Redux"],
+    slug: "portifolio",
+    description: `Crafted with Next.js and styled with Tailwind CSS, my personal portfolio serves as both a testing ground for
+                  frontend explorations and a showcase for my projects and accomplishments. Explore my work and journey
+                  through the interactive display of my skills and achievements.`,
+    name: "Portifolio",
+    techStack: ["React", "Next.js", "Tailwind", "Typescript"],
   },
   {
-    slug: "project-2",
-    description: "Creation of an online project management system",
-    name: "ProjectX",
-    techStack: ["Express", "MongoDB", "Webpack"],
-  },
-  {
-    slug: "project-3",
-    description: "Development of an e-commerce website",
-    name: "ShopZone",
-    techStack: ["React", "TypeScript"],
-  },
-  {
-    slug: "project-4",
-    description: "Implementation of a smart home automation system",
-    name: "SmartHome",
-    techStack: ["Babel", "Tailwind"],
+    slug: "tripper",
+    description: `Tripper is a React Native application designed to showcase routes for road trips that traverse scenic
+                  landscapes, restaurants, or tourist attractions. Users have the ability to create and share their own routes, with
+                  the added feature of voting on routes to elevate their visibility within the community.`,
+    name: "Tripper",
+    techStack: ["React Native", "Typescript"],
   },
 ];
