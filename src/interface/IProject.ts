@@ -6,7 +6,7 @@ export interface IProject {
   name: string;
   techStack: string[];
   timeline: { start: string; end: string } | null | undefined;
-  gitLink: string;
+  gitLink: unknown;
   members: string[];
   projectVisualization?: {
     title?: string;
