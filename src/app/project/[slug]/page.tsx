@@ -29,7 +29,7 @@ export default function Project({ params }: { params: { slug: string } }) {
           </Link>
         </div>
 
-        <div className="flex md:flex-row flex-col justify-between w-full ga'p-10 mt-4 mb-16">
+        <div className="flex md:flex-row flex-col justify-between w-full gap-10 mt-4 mb-16">
           <div
             className="flex flex-wrap gap-4 text-start 
           items-start justify-start flex-col md:w-1/2 w-full"
