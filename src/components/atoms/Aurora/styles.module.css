@@ -2,74 +2,69 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100svh;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: -1; /* Define uma camada abaixo do conteúdo principal */
+  z-index: -1;
 }
 
 .wrapper {
-  width: 100vw;
-  height: 100svh;
-  background: #fff;
+  width: 100%;
+  height: 100vh;
+  background: #d500f9; /* Trocada para um tom de roxo mais claro */
   position: relative;
   overflow: hidden;
 }
 
 .wrapper div {
   position: absolute;
-  filter: blur(10vh); /* 50px scaled to vh */
+  filter: blur(5vw);
   opacity: 0.8;
-  -webkit-filter: blur(10vh); /* 50px scaled to vh */
 }
 
 .animated .one {
   border-radius: 100%;
-  width: 150vh; /* 600px scaled to vh */
-  height: 150vh; /* 600px scaled to vh */
-  background-color: rgb(99, 102, 241);
-  left: -5vh; /* -50px scaled to vh */
-  top: -30vh; /* -300px scaled to vh */
+  width: 150vw;
+  height: 150vw;
+  background-color: #6366f1; /* Trocada para uma tonalidade de azul mais clara */
+  left: -5vw;
+  top: -30vw;
   z-index: 3;
   animation: fly 12s linear infinite;
-  transform: rotate(0) translate(8vh) rotate(0); /* 80px scaled to vh */
+  transform: rotate(0) translate(8vw) rotate(0);
 }
 
 .animated .two {
-  width: 125vh; /* 500px scaled to vh */
-  height: 200vh; /* 800px scaled to vh */
-  background-color: rgb(236, 72, 153);
-  bottom: -3vh; /* -30px scaled to vh */
-  left: -8vh; /* -80px scaled to vh */
+  width: 125vw;
+  height: 200vw;
+  background-color: #ec4899; /* Trocada para uma tonalidade de rosa mais clara */
+  bottom: -3vw;
+  left: -8vw;
 }
 
 .animated .three {
   border-radius: 100%;
-  width: 112.5vh; /* 450px scaled to vh */
-  height: 112.5vh; /* 450px scaled to vh */
-  bottom: -8vh; /* -80px scaled to vh */
-  right: -10vh; /* -100px scaled to vh */
-  background-color: rgb(168, 85, 247);
+  width: 112.5vw;
+  height: 112.5vw;
+  bottom: -8vw;
+  right: -10vw;
+  background-color: #a855f7; /* Trocada para uma tonalidade de roxo mais escura */
   animation: flyPlus 10s linear infinite;
-  -webkit-animation: flyPlus 10s linear infinite;
-  transform: rotate(0) translate(20vh) rotate(0); /* 200px scaled to vh */
-  -webkit-transform: rotate(0) translate(20vh) rotate(0); /* 200px scaled to vh */
+  transform: rotate(0) translate(20vw) rotate(0);
 }
 
 .four {
   border-radius: 100%;
-  width: 87.5vh; /* 350px scaled to vh */
-  height: 87.5vh; /* 350px scaled to vh */
+  width: 87.5vw;
+  height: 87.5vw;
   margin: auto;
   bottom: 0;
   right: 0;
-  background-color: rgb(59, 130, 246);
+  background-color: #3b82f6; /* Trocada para uma tonalidade de azul mais escura */
   animation: flyPlus 15s linear infinite;
-  -webkit-animation: flyPlus 15s linear infinite;
-  transform: rotate(0) translate(20vh) rotate(0); /* 200px scaled to vh */
-  -webkit-transform: rotate(0) translate(20vh) rotate(0); /* 200px scaled to vh */
+  transform: rotate(0) translate(20vw) rotate(0);
 }
 
 @keyframes fly {
@@ -89,5 +84,36 @@
   }
   50% {
     transform: rotate(-1turn) translate(20vw) rotate(1turn);
+  }
+}
+
+/* Adiciona media query para ajustar valores em desktops */
+@media (min-width: 768px) {
+  .animated .one {
+    width: 80vw;
+    height: 80vw;
+    left: -2vw;
+    top: -15vw;
+  }
+
+  .animated .two {
+    width: 70vw;
+    height: 100vw;
+    bottom: -2vw;
+    left: -5vw;
+  }
+
+  .animated .three {
+    width: 60vw;
+    height: 60vw;
+    bottom: -5vw;
+    right: -5vw;
+    transform: rotate(0) translate(10vw) rotate(0);
+  }
+
+  .four {
+    width: 50vw;
+    height: 50vw;
+    transform: rotate(0) translate(10vw) rotate(0);
   }
 }
