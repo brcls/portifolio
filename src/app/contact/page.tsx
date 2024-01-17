@@ -36,7 +36,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex mx-auto w-11/12 h-screen flex-col text-center gap-4 justify-center items-center">
+    <div className="flex mx-auto w-11/12 h-[100svh] flex-col text-center gap-4 justify-center items-center">
       <Title gradient>Contact</Title>
       <div className="flex gap-4 flex-wrap w-full justify-center items-center">
         <Link
