@@ -1,7 +1,7 @@
 export const techStack = [
   "React",
   "React Native",
-  "NextJS",
+  "Next.js",
   "Flutter",
   ".NET",
   "JavaScript",
