@@ -1,5 +1,6 @@
 "use client";
 
+import Text from "@/components/atoms/Text";
 import Title from "@/components/atoms/Title";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -39,34 +40,34 @@ export default function Contact() {
       <Title gradient>Contact</Title>
       <div className="flex gap-4 flex-wrap w-full justify-center items-center">
         <Link
-          className="glass-dark select-none md:w-1/3 w-full p-5 rounded-xl text-xl hover:bg-zinc-900 active:bg-zinc-900
+          className="glass-dark select-none md:w-1/3 w-full p-5 rounded-xl hover:bg-zinc-900 active:bg-zinc-900
         hover:scale-105 active:scale-95 duration-500 flex items-center gap-2"
           target="_blank"
           href="https://github.com/brcls"
         >
           <AiFillGithub size={40} />
-          GitHub
+          <Text>GitHub</Text>
         </Link>
         <Link
-          className="glass-dark select-none md:w-1/3 w-full p-5 rounded-xl text-xl hover:bg-zinc-900 active:bg-zinc-900
+          className="glass-dark select-none md:w-1/3 w-full p-5 rounded-xl hover:bg-zinc-900 active:bg-zinc-900
         hover:scale-105 active:scale-95 duration-500 flex items-center gap-2"
           target="_blank"
           href="https://www.linkedin.com/in/brcls/"
         >
           <AiFillLinkedin size={40} />
-          LinkedIn
+          <Text>LinkedIn</Text>
         </Link>
         <Link
-          className="glass-dark select-none md:w-1/3 w-full p-5 rounded-xl text-xl hover:bg-zinc-900 active:bg-zinc-900
+          className="glass-dark select-none md:w-1/3 w-full p-5 rounded-xl hover:bg-zinc-900 active:bg-zinc-900
         hover:scale-105 active:scale-95 duration-500 flex items-center gap-2"
           target="_blank"
           href="https://instagram.com/rckbrcls"
         >
           <AiFillInstagram size={40} />
-          Instagram
+          <Text>Instagram</Text>
         </Link>
         <Link
-          className="glass-dark select-none md:w-1/3 w-full p-5 rounded-xl text-xl hover:bg-zinc-900 active:bg-zinc-900
+          className="glass-dark select-none md:w-1/3 w-full p-5 rounded-xl hover:bg-zinc-900 active:bg-zinc-900
         hover:scale-105 active:scale-95 duration-500 flex items-center justify-between"
           href="mailto:erickbarcelosdev@gmail.com?subject=Let's work together!"
           onClick={() => {
@@ -77,7 +78,7 @@ export default function Contact() {
         >
           <div className="flex items-center gap-2">
             <AiFillMail size={40} />
-            E-mail
+            <Text>E-mail</Text>
           </div>
           {showCopyMessage && <p>Copied!</p>}
         </Link>
