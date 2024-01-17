@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { ClassNameValue, twMerge } from "tailwind-merge";
 
-export default function Title({
+export default function SubTitle({
   children,
   className,
   gradient,
@@ -13,10 +13,10 @@ export default function Title({
   return (
     <p
       className={twMerge(
-        `text-7xl md:text-9xl font-bold
+        `text-4xl md:text-5xl
         ${
           gradient &&
-          "bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 bg-clip-text pb-4 inline-block text-transparent"
+          "bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 bg-clip-text inline-block text-transparent"
         }`,
         className
       )}

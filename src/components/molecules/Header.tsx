@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Text from "../atoms/Text";
 
 export default function Header() {
   const [background, setBackground] = useState(false);
@@ -36,36 +37,32 @@ export default function Header() {
   return (
     <header
       className={`${
-        background ? "glass-dark bg-[#00000078] border-none" : "bg-none"
-      } flex mt-4 justify-center items-center gap-2 
-                    p-2 md:w-1/2 inset-x-0 mx-auto rounded-full fixed z-10
-                    w-11/12 select-none transition duration-1000`}
+        background ? "glass-dark border-none" : "bg-none"
+      } flex mt-4 justify-center items-center gap-4 px-4 py-2 w-min inset-x-0 
+      mx-auto rounded-full fixed z-10 select-none transition duration-1000`}
     >
       <Link href={"/"}>
         <button
-          className="text-zinc-100 text-md md:text-xl py-2 px-6 
-        rounded-full font-md hover:scale-110 active:scale-95 duration-500 
-        hover:bg-zinc-800 active:bg-zinc-900/hover:bg-zinc-800"
+          className="py-2 px-6 rounded-full hover:scale-110 active:scale-95 duration-500 
+        hover:bg-zinc-800 active:bg-zinc-900"
         >
-          Projects
+          <Text className="whitespace-nowrap">Projects</Text>
         </button>
       </Link>
       <Link href={"/about-me"}>
         <button
-          className="text-zinc-100 text-md md:text-xl py-2 px-6 
-        rounded-full font-md hover:scale-110 active:scale-95 duration-500 
-        hover:bg-zinc-800 active:bg-zinc-900/hover:bg-zinc-800"
+          className="py-2 px-6 rounded-full hover:scale-110 active:scale-95 duration-500 
+        hover:bg-zinc-800 active:bg-zinc-900"
         >
-          About me
+          <Text className="whitespace-nowrap">About me</Text>
         </button>
       </Link>
       <Link href={"/contact"}>
         <button
-          className="text-zinc-100 text-md md:text-xl py-2 px-6 
-        rounded-full font-md hover:scale-110 active:scale-95 duration-500 
-        hover:bg-zinc-800 active:bg-zinc-900/hover:bg-zinc-800"
+          className="py-2 px-6 rounded-full hover:scale-110 active:scale-95 duration-500 
+        hover:bg-zinc-800 active:bg-zinc-900"
         >
-          Contact
+          <Text className="whitespace-nowrap">Contact</Text>
         </button>
       </Link>
     </header>
