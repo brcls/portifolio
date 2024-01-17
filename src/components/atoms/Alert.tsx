@@ -11,7 +11,7 @@ export default function Alert() {
       {showAlert && (
         <div
           className="p-4 z-50 glass-dark border-none fixed bottom-4 right-1/2 
-      w-11/12 translate-x-1/2 flex justify-between text-start items-center rounded-xl gap-4
+      w-11/12 translate-x-1/2 flex md:flex-row flex-col justify-between text-start items-center rounded-xl gap-4
       transition duration-1000"
         >
           <Text>
@@ -19,8 +19,8 @@ export default function Alert() {
             will be a polished masterpiece! 😉
           </Text>
           <button
-            className="py-2 px-6 rounded-full hover:scale-105 active:scale-95 transition duration-500 
-        hover:bg-zinc-800 active:bg-zinc-900 border-zinc-900/10 border-2"
+            className="py-2 px-4 rounded-full hover:scale-105 active:scale-95 transition duration-500 
+        hover:bg-zinc-800 active:bg-zinc-900 border-zinc-900/10 border-2 md:w-min w-full"
             onClick={() => setShowAlert(false)}
           >
             <Text>Close</Text>
