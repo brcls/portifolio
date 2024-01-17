@@ -13,9 +13,7 @@ type TechItem = {
 };
 
 export default function ProjectsList() {
-  function createTechItem(name: string): TechItem {
-    return { name, active: false };
-  }
+  const createTechItem = (name: string): TechItem => ({ name, active: false });
 
   const initialTechStack: TechItem[] = techStack.map(createTechItem);
   const [filter, setFilter] = useState<TechItem[]>(initialTechStack);
@@ -36,9 +34,23 @@ export default function ProjectsList() {
     setFilter(initialTechStack);
   };
 
-  const projectCards = filteredProjects.map((project, index) => (
-    <Card key={project.slug} project={project} index={index} />
+  const projectCards = filteredProjects.map((project) => (
+    <Card key={project.slug + project.name} project={project} />
   ));
+
+  const buttonBaseStyle =
+    "glass-dark px-6 py-1 rounded-full active:scale-95 hover:scale-110 duration-500 select-none";
+  const clearButtonStyle = `${buttonBaseStyle} bg-zinc-500 hover:bg-zinc-800 active:bg-zinc-800`;
+  const filterButtonStyle = (active: boolean) =>
+    `${buttonBaseStyle} font-bold hover:scale-110 duration-500 select-none ${
+      active
+        ? "bg-blue-500 hover:bg-blue-800 active:bg-blue-800"
+        : "hover:bg-zinc-900 active:bg-zinc-900"
+    }`;
+
+  const headerStyle = "flex flex-col text-center py-20 w-11/12 mx-auto";
+  const filterContainerStyle = "flex flex-wrap justify-center gap-2 my-12";
+  const gridContainerStyle = "grid md:grid-cols-2 gap-4 w-full";
 
   const handleSelectFilter = (index: number) => {
     const updatedFilter = [...filter]; // Criar uma cópia do array filter
@@ -47,35 +59,23 @@ export default function ProjectsList() {
   };
 
   return (
-    <div className="flex flex-col text-center py-20 w-11/12 mx-auto">
+    <div className={headerStyle}>
       <Title gradient>Projects</Title>
-      <div className="flex flex-wrap justify-center gap-2 my-12">
-        <button
-          className={`glass-dark px-6 py-1 rounded-full active:scale-95 
-                    hover:scale-110 duration-500 select-none
-                   bg-zinc-500 hover:bg-zinc-800 active:bg-zinc-800
-                    `}
-          onClick={resetFilter}
-        >
+      <div className={filterContainerStyle}>
+        <button className={clearButtonStyle} onClick={resetFilter}>
           <Text>Clear</Text>
         </button>
         {filter.map((item, index) => (
           <button
-            key={index}
-            className={`glass-dark px-6 py-1 rounded-full active:scale-95 
-              font-bold hover:scale-110 duration-500 select-none
-              ${
-                item.active
-                  ? "bg-blue-500 hover:bg-blue-800 active:bg-blue-800"
-                  : "hover:bg-zinc-900 active:bg-zinc-900"
-              }`}
+            key={item.name}
+            className={filterButtonStyle(item.active)}
             onClick={() => handleSelectFilter(index)}
           >
             <Text>{item.name}</Text>
           </button>
         ))}
       </div>
-      <div className="grid  md:grid-cols-2 gap-4 w-full">{projectCards}</div>
+      <div className={gridContainerStyle}>{projectCards}</div>
     </div>
   );
 }
