@@ -8,6 +8,8 @@ import { AiFillGithub } from "react-icons/ai";
 import Title from "@/components/atoms/Title";
 import { UrlObject } from "url";
 import { Route } from "next";
+import Text from "@/components/atoms/Text";
+import SubTitle from "@/components/atoms/SubTitle";
 
 export default function Project({ params }: { params: { slug: string } }) {
   const project = projects.find((project) => project.slug === params.slug);
@@ -24,7 +26,7 @@ export default function Project({ params }: { params: { slug: string } }) {
               href={project?.gitLink as Route}
             >
               <AiFillGithub size={30} />
-              Repository
+              <Text>Repository</Text>
             </Link>
           </div>
 
@@ -34,14 +36,14 @@ export default function Project({ params }: { params: { slug: string } }) {
             items-start justify-start flex-col md:w-1/2 w-full"
             >
               <div className="flex items-center justify-between text-center glass-dark p-4 rounded-2xl w-full gap-2">
-                <p className="text-xl text-start">Tech Stack</p>
+                <Text>Tech Stack</Text>
                 <div className="flex flex-wrap gap-2 justify-end">
                   {project?.techStack?.map((tech) => (
                     <div
                       key={tech}
-                      className="bg-blue-500 rounded-lg px-4 flex items-center text-md"
+                      className="bg-blue-500 rounded-lg px-4 flex items-center"
                     >
-                      {tech}
+                      <Text>{tech}</Text>
                     </div>
                   ))}
                 </div>
@@ -49,40 +51,38 @@ export default function Project({ params }: { params: { slug: string } }) {
 
               {project?.timeline ? (
                 <div className="flex items-center justify-between text-center glass-dark p-4 rounded-2xl w-full gap-2">
-                  <p className="text-xl text-start">Timeline</p>
-                  <p className="bg-blue-500 rounded-lg px-4 flex items-center text-md">
-                    {project?.timeline?.start} - {project?.timeline?.end}
-                  </p>
+                  <Text>Timeline</Text>
+                  <div className="bg-blue-500 rounded-lg px-4 flex items-center">
+                    <Text>
+                      {project?.timeline?.start} - {project?.timeline?.end}
+                    </Text>
+                  </div>
                 </div>
               ) : null}
 
               <div className="flex items-center justify-between text-center glass-dark p-4 rounded-2xl w-full gap-2">
-                <p className="text-xl text-start">Members</p>
+                <Text>Members</Text>
                 <div className="flex flex-wrap gap-2 justify-end">
                   {project?.members.map((member) => (
-                    <p className="bg-blue-500 rounded-lg px-4 flex items-center text-md">
-                      {member}
-                    </p>
+                    <div className="bg-blue-500 rounded-lg px-4 flex items-center">
+                      <Text>{member}</Text>
+                    </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            <p className="md:text-xl text-md md:w-1/2 w-full text-start">
+            <Text className="md:w-1/2 w-full text-start">
               {project?.description}
-            </p>
+            </Text>
           </div>
         </div>
 
         <div className="flex flex-wrap md:flex-row flex-col gap-16 mb-10 justify-between items-center">
           {project?.projectVisualization?.map((object, index) => (
             <div className="flex flex-col gap-2">
-              <p className="md:text-5xl text-4xl md:text-start">
-                {object.title}
-              </p>
-              <p className="md:text-xl text-md text-start">
-                {object.description}
-              </p>
+              <SubTitle className="md:text-start">{object.title}</SubTitle>
+              <Text>{object.description}</Text>
 
               <div className="w-full flex flex-wrap gap-4 md:flex-row flex-col items-center">
                 {object.images?.map((image) => (

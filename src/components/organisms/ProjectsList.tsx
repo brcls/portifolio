@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Title from "../atoms/Title";
+import Text from "../atoms/Text";
 import Card from "@/components/molecules/Card";
 import { projects } from "../../../public/data/projects/projects";
 import { techStack } from "../../../public/data/techStack";
@@ -51,13 +52,12 @@ export default function ProjectsList() {
       <div className="flex flex-wrap justify-center gap-2 my-12">
         <button
           className={`glass-dark px-6 py-1 rounded-full active:scale-95 
-              font-bold hover:scale-110 duration-500 select-none
-             
+                    hover:scale-110 duration-500 select-none
                    bg-zinc-500 hover:bg-zinc-800 active:bg-zinc-800
-              `}
+                    `}
           onClick={resetFilter}
         >
-          Clear
+          <Text>Clear</Text>
         </button>
         {filter.map((item, index) => (
           <button
@@ -71,7 +71,7 @@ export default function ProjectsList() {
               }`}
             onClick={() => handleSelectFilter(index)}
           >
-            {item.name}
+            <Text>{item.name}</Text>
           </button>
         ))}
       </div>

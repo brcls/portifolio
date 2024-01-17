@@ -3,6 +3,8 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Route } from "next";
 import { IProject } from "@/interface/IProject";
+import Text from "../atoms/Text";
+import SubTitle from "../atoms/SubTitle";
 
 interface ICardProps {
   project: IProject;
@@ -20,11 +22,11 @@ export default function Card({ project, index }: ICardProps) {
          md:flex-row flex-col overflow-hidden active:scale-[1.02] select-none`}
       >
         <div className="md:p-10 p-5 text-left md:w-1/2 w-full select-none">
-          <p className="text-5xl md:text-6xl font-bold">{project.name}</p>
+          <SubTitle>{project.name}</SubTitle>
           <div className="flex flex-wrap gap-2 my-6">
             {project.techStack.map((tech) => (
-              <div key={tech} className="bg-blue-500 rounded-full px-4 text-lg">
-                {tech}
+              <div key={tech} className="bg-blue-500 rounded-full px-4">
+                <Text>{tech}</Text>
               </div>
             ))}
           </div>
