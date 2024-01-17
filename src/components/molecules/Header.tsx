@@ -36,16 +36,16 @@ export default function Header() {
   return (
     <header
       className={`${
-        background ? "glass-dark bg-[#0000001a] border-none" : "bg-none"
+        background ? "glass-dark bg-[#00000078] border-none" : "bg-none"
       } flex mt-4 justify-center items-center gap-2 
-                    p-2 md:w-1/2 inset-x-0 mx-auto rounded-xl fixed z-10
+                    p-2 md:w-1/2 inset-x-0 mx-auto rounded-full fixed z-10
                     w-11/12 select-none transition duration-1000`}
     >
       <Link href={"/"}>
         <button
           className="text-zinc-100 text-md md:text-xl py-2 px-6 
-        rounded-xl font-md hover:scale-110 active:scale-95 duration-500 
-        hover:bg-zinc-800 active:bg-zinc-900/hover:bg-zinc-800 mix-blend-multiply"
+        rounded-full font-md hover:scale-110 active:scale-95 duration-500 
+        hover:bg-zinc-800 active:bg-zinc-900/hover:bg-zinc-800"
         >
           Projects
         </button>
@@ -53,7 +53,7 @@ export default function Header() {
       <Link href={"/about-me"}>
         <button
           className="text-zinc-100 text-md md:text-xl py-2 px-6 
-        rounded-xl font-md hover:scale-110 active:scale-95 duration-500 
+        rounded-full font-md hover:scale-110 active:scale-95 duration-500 
         hover:bg-zinc-800 active:bg-zinc-900/hover:bg-zinc-800"
         >
           About me
@@ -62,7 +62,7 @@ export default function Header() {
       <Link href={"/contact"}>
         <button
           className="text-zinc-100 text-md md:text-xl py-2 px-6 
-        rounded-xl font-md hover:scale-110 active:scale-95 duration-500 
+        rounded-full font-md hover:scale-110 active:scale-95 duration-500 
         hover:bg-zinc-800 active:bg-zinc-900/hover:bg-zinc-800"
         >
           Contact
