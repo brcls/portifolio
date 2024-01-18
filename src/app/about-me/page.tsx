@@ -60,13 +60,15 @@ export default function AboutMe() {
             )}
           >
             {box.image && (
-              <div className="w-full h-full">
+              <div className="w-full h-full relative">
                 <Image
+                  className="select-none"
                   src={box.image}
                   alt="me"
                   fill
                   style={{ objectFit: "cover", objectPosition: "right" }}
                   priority
+                  quality={100}
                 />
               </div>
             )}
