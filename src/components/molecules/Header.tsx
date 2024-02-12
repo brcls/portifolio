@@ -37,7 +37,7 @@ const Header = () => {
   const headerClass = background ? "glass-dark border-none" : "bg-none";
 
   const buttonClass =
-    "py-2 px-6 rounded-full hover:scale-110 active:scale-95 duration-500 hover:bg-zinc-800 active:bg-zinc-900";
+    "py-2 px-6 rounded-full hover:scale-110 active:scale-95 duration-500 hover:bg-zinc-800 active:bg-zinc-900 flex items-center gap-2";
 
   const headerStyle = `flex mt-4 justify-center items-center gap-4 px-4 py-2 w-min inset-x-0 
     mx-auto rounded-full fixed z-10 select-none transition duration-1000 ${headerClass}`;
