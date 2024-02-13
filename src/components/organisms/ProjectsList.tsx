@@ -5,15 +5,18 @@ import Title from "../atoms/Title";
 import Text from "../atoms/Text";
 import Card from "@/components/molecules/Card";
 import { projects } from "../../../public/data/projects/projects";
-import { techStack } from "../../../public/data/techStack";
+import { TypeTechStack, techStack } from "../../../public/data/techStack";
 
 type TechItem = {
-  name: string;
+  name: TypeTechStack;
   active: boolean;
 };
 
 export default function ProjectsList() {
-  const createTechItem = (name: string): TechItem => ({ name, active: false });
+  const createTechItem = (name: TypeTechStack): TechItem => ({
+    name,
+    active: false,
+  });
 
   const initialTechStack: TechItem[] = techStack.map(createTechItem);
   const [filter, setFilter] = useState<TechItem[]>(initialTechStack);

@@ -32,13 +32,13 @@ export default function AboutMe() {
     },
     {
       className: "md:col-span-2",
-      text: `In my personal life, I cherish Ororu, my affectionate pitbull. Her joyful presence brings me endless happiness and companionship.`,
+      text: `I'm passionate about both art and sports. Creativity is my outlet for self-expression, while sports help me maintain a healthy balance of mind and body.`,
       align: "right",
     },
     { className: "md:col-span-2", image: DrawPrimal, align: "bottom" },
     {
       className: "md:col-span-2",
-      text: `I'm passionate about both art and sports. Creativity is my outlet for self-expression, while sports help me maintain a healthy balance of mind and body.`,
+      text: `In my personal life, I cherish Ororu, my affectionate pitbull. Her joyful presence brings me endless happiness and companionship.`,
     },
     { className: "md:col-span-1", image: Ororu },
     { className: "md:col-span-1", image: Draw2D },
@@ -103,12 +103,12 @@ export default function AboutMe() {
             )}
             {box.text && (
               <SubTitle
-                className={`m-6 ${
+                className={`m-6 text-start ${
                   box?.align === "right"
-                    ? "text-right"
+                    ? "md:text-right"
                     : box?.align === "center"
-                    ? "text-center"
-                    : "text-left"
+                    ? "md:text-center"
+                    : "md:text-left"
                 }`}
               >
                 {box.text}

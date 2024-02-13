@@ -20,14 +20,27 @@ export default function Project({ params }: { params: { slug: string } }) {
         <div className="h-[100svh] flex flex-col justify-center text-center items-center gap-4 w-full">
           <div className="flex md:flex-row flex-col justify-between items-center w-full">
             <Title gradient>{project?.name}</Title>
-            <Link
-              className="glass-dark md:w-1/4 w-full px-10 py-4 rounded hover:bg-zinc-900 active:bg-zinc-900
-            hover:scale-105 active:scale-95 duration-500 flex items-center justify-center gap-2"
-              href={project?.gitLink as Route}
-            >
-              <AiFillGithub size={30} />
-              <Text>Repository</Text>
-            </Link>
+            {project?.gitLink && (
+              <Link
+                className="glass-dark md:w-1/4 w-full px-10 py-4 rounded hover:bg-zinc-900 active:bg-zinc-900
+              hover:scale-105 active:scale-95 duration-500 flex items-center justify-center gap-2"
+                href={project.gitLink}
+              >
+                <AiFillGithub size={30} />
+                <Text>Repository</Text>
+              </Link>
+            )}
+            {project?.link && (
+              <a
+                href={project.link}
+                className="glass-dark md:w-1/4 w-full px-10 py-4 rounded hover:bg-zinc-900 active:bg-zinc-900
+              hover:scale-105 active:scale-95 duration-500 flex items-center justify-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Text>Project</Text>
+              </a>
+            )}
           </div>
 
           <div className="flex md:flex-row flex-col justify-between w-full gap-10">
