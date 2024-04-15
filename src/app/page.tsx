@@ -20,7 +20,7 @@ export default function Home() {
             quality={100}
           />
         </div>
-        <Title>Olá! I'am Erick Barcelos</Title>
+        <Title>Olá! I'm Erick Barcelos</Title>
       </div>
       <ProjectsList />
     </>
